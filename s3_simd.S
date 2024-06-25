@@ -7,7 +7,7 @@ s3_add16x8:
   wsr.sar        a5                 # set the numbers of bits to bits to right-shift from a5
   ee.vld.128.ip  q1,a3,16           # load 8 "B" values into Q1 from A3, then add 16 to A3 - reusing this
   movi.n         a6, 0              # set a6 = 0
-  movi.n         a7, 16             # set a7 = 8 ... this could also be passed in as an argument!
+  movi.n         a7, 16             # set a7 = 16 ... this could/should be passed in as an argument via a#
   loop:
     beq            a6, a7, exit     # branch to "exit" if a6 == a7
     ee.vld.128.ip  q0,a2,16         # load 8 "A" values into Q0 from A2, then move the pointer by 16
